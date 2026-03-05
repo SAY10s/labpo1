@@ -9,6 +9,7 @@
 
 class Trojkat : public FiguraPlaska {
     double a, b, c;
+    static int licznik;
 
 protected:
     void Wypisz(std::ostream &out) const override;

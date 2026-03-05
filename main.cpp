@@ -40,6 +40,7 @@ int main() {
     Present(figury[0]->Pole());
 
     delete p2;
+    cout << *figury[0] << endl;
 
     for (int i = 0; i < 3; i++) {
         delete figury[i];

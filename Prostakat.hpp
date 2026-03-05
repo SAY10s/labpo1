@@ -10,6 +10,7 @@
 class Prostokat : public FiguraPlaska {
 private:
     double a, b;
+    static int licznik;
 
 protected:
     void Wypisz(std::ostream &out) const override;

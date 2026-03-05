@@ -9,6 +9,7 @@
 
 class Kolo : public FiguraPlaska {
     double r;
+    static int licznik;
 
 protected:
     void Wypisz(std::ostream &out) const override;

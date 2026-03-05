@@ -7,11 +7,12 @@ using namespace std;
 
 Kolo::Kolo(double r)
     : r(r) {
+    licznik++;
     cout << "**Konstruktor Koła(" << r << ")" << endl;
 }
 
 void Kolo::Wypisz(std::ostream &out) const {
-    out << "Kolo(r=" << r << ")";
+    out << "Kolo(r=" << r << ") liczba obiektów: " << licznik;
 }
 
 double Kolo::GetR() const {
@@ -32,4 +33,7 @@ double Kolo::Pole() const {
 
 Kolo::~Kolo() {
     cout << "**Destruktor Koła(" << r << ")" << endl;
+    licznik--;
 }
+
+int Kolo::licznik = 0;

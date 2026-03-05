@@ -8,6 +8,7 @@ using namespace std;
 
 Prostokat::Prostokat(double a, double b)
     : a(a), b(b) {
+    licznik++;
     cout << "**Konstruktor Prostokąta(" << a << "," << b << ")" << endl;
 }
 
@@ -38,9 +39,12 @@ double Prostokat::Pole() const {
 }
 
 void Prostokat::Wypisz(std::ostream &out) const {
-    out << "Prostokat(a=" << a << ", b=" << b << ")";
+    out << "Prostokat(a=" << a << ", b=" << b << ") obiektów ogółem: " << licznik;
 }
 
 Prostokat::~Prostokat() {
+    licznik--;
     cout << "**Destruktor Prostokąta(" << a << "," << b << ")" << endl;
 }
+
+int Prostokat::licznik = 0;

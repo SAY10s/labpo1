@@ -8,6 +8,7 @@ using namespace std;
 
 Trojkat::Trojkat(double a, double b, double c)
     : a(a), b(b), c(c) {
+    licznik++;
     cout << "**Konstruktor Trójkąta(" << a << "," << b << "," << c << ")" << endl;
 }
 
@@ -45,9 +46,12 @@ double Trojkat::Pole() const {
 }
 
 void Trojkat::Wypisz(std::ostream &out) const {
-    out << "Trojkat(a=" << a << ", b=" << b << ", c=" << c << ")";
+    out << "Trojkat(a=" << a << ", b=" << b << ", c=" << c << ") obiektów ogółem: " << licznik;
 }
 
 Trojkat::~Trojkat() {
+    licznik--;
     cout << "**Destruktor Trójkąta(" << a << "," << b << "," << c << ")" << endl;
 }
+
+int Trojkat::licznik = 0;
