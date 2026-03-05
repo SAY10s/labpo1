@@ -8,16 +8,17 @@
 #include "FiguraPlaska.hpp"
 
 class Prostokat : public FiguraPlaska {
-private:
     double a, b;
     static int licznik;
+
+    friend class FabrykaFigur;
+
+    Prostokat(double a, double b);
 
 protected:
     void Wypisz(std::ostream &out) const override;
 
 public:
-    Prostokat(double a, double b);
-
     double GetA() const;
 
     void SetA(double a);

@@ -12,4 +12,6 @@ add_executable(labpo1 main.cpp
         Trojkat.hpp
         Kolo.cpp
         Kolo.hpp
+        FabrykaFigur.cpp
+        FabrykaFigur.hpp
 )

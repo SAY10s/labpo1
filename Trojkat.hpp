@@ -11,12 +11,14 @@ class Trojkat : public FiguraPlaska {
     double a, b, c;
     static int licznik;
 
+    friend class FabrykaFigur;
+
+    Trojkat(double a, double b, double c);
+
 protected:
     void Wypisz(std::ostream &out) const override;
 
 public:
-    Trojkat(double a, double b, double c);
-
     double GetA() const;
 
     void SetA(double a);

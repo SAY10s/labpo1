@@ -7,16 +7,18 @@
 
 #include "FiguraPlaska.hpp"
 
+
 class Kolo : public FiguraPlaska {
     double r;
     static int licznik;
+    friend class FabrykaFigur;
+
+    Kolo(double r);
 
 protected:
     void Wypisz(std::ostream &out) const override;
 
 public:
-    Kolo(double r);
-
     double GetR() const;
 
     void SetR(double r);

@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "FabrykaFigur.hpp"
 #include "Prostakat.hpp"
 #include "Trojkat.hpp"
 #include "Kolo.hpp"
@@ -15,19 +16,18 @@ void Present(double wartosc) {
 }
 
 int main() {
-    Prostokat p1(2.0, 5.0);
-    cout << "Pole: " << p1.Pole() << ", Obwod: " << p1.Obwod() << endl;
+    FiguraPlaska *p1 = FabrykaFigur::createProstakat(3.0, 4.0);
+    cout << "Pole: " << p1->Pole() << ", Obwod: " << p1->Obwod() << endl;
     cout << p1 << endl;
 
-    Prostokat *p2 = new Prostokat(3.0, 4.0);
+    FiguraPlaska *p2 = FabrykaFigur::createProstakat(3.0, 4.0);
     cout << "Pole: " << p2->Pole() << ", Obwod: " << p2->Obwod() << endl;
     cout << *p2 << endl;
 
     FiguraPlaska *figury[3];
-    figury[0] = new Prostokat(2.0, 3.0);
-    figury[1] = new Trojkat(3.0, 4.0, 5.0);
-    figury[2] = new Kolo(4.0);
-
+    figury[0] = FabrykaFigur::createProstakat(2.0, 3.0);
+    figury[1] = FabrykaFigur::createTrojkat(3.0, 4.0, 5.0);
+    figury[2] = FabrykaFigur::createKolo(4.0);
 
     for (int i = 0; i < 3; i++) {
         cout << "Figura [" << i << "]: " << endl;
@@ -45,6 +45,7 @@ int main() {
     for (int i = 0; i < 3; i++) {
         delete figury[i];
     }
+
 
     return 0;
 }
